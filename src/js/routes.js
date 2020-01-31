@@ -5,6 +5,7 @@ import FormPage from '../pages/form.vue';
 import CatalogPage from '../pages/catalog.vue';
 import ProductPage from '../pages/product.vue';
 import SettingsPage from '../pages/settings.vue';
+import LoginSignupPage from '../pages/login-signup.vue';
 
 import DynamicRoutePage from '../pages/dynamic-route.vue';
 import RequestAndLoad from '../pages/request-and-load.vue';
@@ -18,6 +19,10 @@ var routes = [
   {
     path: '/about/',
     component: AboutPage,
+  },
+  {
+    path: '/login-signup/',
+    component: LoginSignupPage,
   },
   {
     path: '/form/',

@@ -1,6 +1,9 @@
 // Import Vue
 import Vue from 'vue';
 
+// Import Firebase
+import firebase from './db';
+
 // Import Store
 import store from './store';
 
@@ -32,5 +35,12 @@ new Vue({
   components: {
     app: App
   },
-  store
+  store,
+  created () {
+    firebase.auth.onAuthStateChanged((user) => {
+      if (user) {
+        this.$store.dispatch('autoSignIn', user)
+      }
+    })
+  }
 });

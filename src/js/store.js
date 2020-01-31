@@ -3,9 +3,15 @@ import Vuex from 'vuex'
 import { vuexfireMutations, firestoreAction } from 'vuexfire'
 import { firestore } from './db'
 
+import user from './store-user'
+
 Vue.use(Vuex);
 
 export default new Vuex.Store({
+  modules: {
+    user: user
+  },
+
   state: {
     messages: [],
   },

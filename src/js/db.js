@@ -1,5 +1,6 @@
 import firebase from 'firebase/app'
 import 'firebase/firestore'
+import 'firebase/auth'
 
 // firebase init goes here
 const config = {
@@ -15,6 +16,7 @@ const config = {
   
 // Get a Firestore instance
 export const firestore = firebase.firestore()
+export const auth = firebase.auth()
 
 // We enable offline support (with multi tab support)
 firebase.firestore().enablePersistence({
@@ -41,6 +43,7 @@ export { TimeStamp, GeoPoint }
 
 export default {
     firestore,
+    auth
     // currentUser,
     // usersCollection
   };
