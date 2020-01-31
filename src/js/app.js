@@ -1,6 +1,9 @@
 // Import Vue
 import Vue from 'vue';
 
+// Import Store
+import store from './store';
+
 // Import Framework7
 import Framework7 from './framework7-custom.js';
 
@@ -29,4 +32,5 @@ new Vue({
   components: {
     app: App
   },
+  store
 });

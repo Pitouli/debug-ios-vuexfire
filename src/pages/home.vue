@@ -19,6 +19,14 @@
       <p>Each tab/view may have different layout, different navbar type (dynamic, fixed or static) or without navbar like this tab.</p>
     </f7-block>
 
+    <f7-block-title>Debug firestore</f7-block-title>
+    <f7-list>
+      <f7-list-button @click="addMessage">Add Message</f7-list-button>
+      <f7-list-item v-for="message in messages" :key="message.id">
+        {{ new Date(message.date.seconds*1000).toUTCString() }} | {{ message.date.nanoseconds }}
+      </f7-list-item>
+    </f7-list>
+
     <f7-block-title>Navigation</f7-block-title>
     <f7-list>
       <f7-list-item link="/about/" title="About"></f7-list-item>
@@ -66,3 +74,25 @@
 
   </f7-page>
 </template>
+
+<script>
+import { mapGetters } from "vuex";
+
+export default {
+  data() {
+    return {};
+  },
+  computed: {
+    // mix the getters into computed with object spread operator
+    ...mapGetters(["messages"])
+  },
+  mounted() {
+    this.$store.dispatch("bindMessages")
+  },
+  methods: {
+    addMessage() {
+      this.$store.dispatch("addMessage", { value: "Coucou" } )
+    }
+  }
+}
+</script>

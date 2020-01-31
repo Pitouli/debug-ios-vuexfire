@@ -56,13 +56,6 @@
       </f7-list-item>
 
       <f7-list-input
-        label="Range"
-        :input="false"
-      >
-        <f7-range slot="input" :value="50" :min="0" :max="100" :step="1"></f7-range>
-      </f7-list-input>
-
-      <f7-list-input
         type="textarea"
         label="Textarea"
         placeholder="Bio"
