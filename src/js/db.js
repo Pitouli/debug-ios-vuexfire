@@ -4,13 +4,13 @@ import 'firebase/auth'
 
 // firebase init goes here
 const config = {
-    apiKey: "AIzaSyDJgStevUhq9js5V6ln2CWJJGxFBkxQBkY",
-    authDomain: "debug-and-test-env.firebaseapp.com",
-    databaseURL: "https://debug-and-test-env.firebaseio.com",
-    projectId: "debug-and-test-env",
-    storageBucket: "debug-and-test-env.appspot.com",
-    messagingSenderId: "512021815323",
-    appId: "1:512021815323:web:58bea294392ab728c098be"
+    apiKey: "AIzaSyATn5N1tm21Jup5P0Xie1MGW5G63yCRFag",
+    authDomain: "debug-ios-vuexfire.firebaseapp.com",
+    databaseURL: "https://debug-ios-vuexfire.firebaseio.com",
+    projectId: "debug-ios-vuexfire",
+    storageBucket: "debug-ios-vuexfire.appspot.com",
+    messagingSenderId: "124944452752",
+    appId: "1:124944452752:web:2c1dc675adf4d915dd9c15"
   };
   firebase.initializeApp(config);
   
