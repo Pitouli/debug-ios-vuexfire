@@ -18,6 +18,8 @@ const config = {
 export const firestore = firebase.firestore()
 export const auth = firebase.auth()
 
+// Attempt to correct the cordova issue
+firebase.firestore().settings({ experimentalForceLongPolling: true });
 // We enable offline support (with multi tab support)
 firebase.firestore().enablePersistence({
     synchronizeTabs: true,
@@ -33,6 +35,8 @@ firebase.firestore().enablePersistence({
         // ...
       }
     });
+// We set the log level
+firebase.firestore.setLogLevel('debug');
 
 // Export types that exists in Firestore
 // This is not always necessary, but it's used in other examples

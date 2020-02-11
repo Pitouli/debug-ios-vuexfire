@@ -19,13 +19,23 @@
       <p>Each tab/view may have different layout, different navbar type (dynamic, fixed or static) or without navbar like this tab.</p>
     </f7-block>
 
-    <f7-block-title>Debug firestore</f7-block-title>
+    <f7-block-title>Debug firestore - Messages no auth</f7-block-title>
     <f7-list>
       <f7-list-button @click="addMessage">Add Message</f7-list-button>
       <f7-list-item v-for="message in messages" :key="message.id">
         {{ new Date(message.date.seconds*1000).toUTCString() }} | {{ message.date.nanoseconds }}
       </f7-list-item>
     </f7-list>
+
+    <f7-block-title>Debug firestore - Messages with auth</f7-block-title>
+    <f7-list>
+      <f7-list-button @click="addUserMessage">Add User Message</f7-list-button>
+      <f7-list-item v-for="userMessage in userMessages" :key="userMessage.id">
+        {{ new Date(userMessage.date.seconds*1000).toUTCString() }} | {{ userMessage.date.nanoseconds }}
+      </f7-list-item>
+    </f7-list>
+
+
 
     <f7-block-title>Navigation</f7-block-title>
     <f7-list>
@@ -84,7 +94,7 @@ export default {
   },
   computed: {
     // mix the getters into computed with object spread operator
-    ...mapGetters(["messages"])
+    ...mapGetters(["messages", "userMessages"])
   },
   mounted() {
     this.$store.dispatch("bindMessages")
@@ -92,6 +102,9 @@ export default {
   methods: {
     addMessage() {
       this.$store.dispatch("addMessage", { value: "Coucou" } )
+    },
+    addUserMessage() {
+      this.$store.dispatch("addUserMessage", { value: "Coucou User" } )
     }
   }
 }
